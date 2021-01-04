@@ -175,3 +175,66 @@ header nav {
 .environments {
     margin: 0.5rem 0 1rem 0;
 }
+
+footer {
+    margin-top: 6.25rem;
+    padding-bottom: 3.75rem;
+    border-top: 1px solid #e6e6e6;
+    background: #e6e6e6;
+}
+
+.container__socials {
+    padding: 0 25%;
+    background: #fff;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container__socials a {
+    padding: 2rem;
+    max-width: 100%;
+    width: 50%;
+    color: #000;
+    text-decoration: none;
+}
+
+.container__socials a:hover {
+    color: #003cff;
+}
+
+.container__socials a svg {
+    width: 1.4rem;
+}
+
+.container__instagram {
+    max-width: 100%;
+    padding: 0 5%;
+}
+
+.instagram__title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.instagram__title a {
+    text-decoration: none;
+    color:#000;
+}
+
+.instagram__title a:hover {
+    color: #003cff;
+}
+
+.legal {
+    max-width: 100%;
+    padding: 0 5%;
+    margin: 3.75rem 0 0;
+}
+
+.legal p, .legal p a {
+    font-size: 0.75rem;
+}
