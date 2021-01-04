@@ -8,11 +8,20 @@
     box-sizing: border-box;
     line-height: 1.2;
 }
+h2 {
+    font-size: 2.1rem;
+}
 
 h3 {
     color: #787878;
     font-size: 1.1rem;
     line-height: 1.2;
+}
+
+p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 header {
@@ -37,10 +46,14 @@ header nav {
     list-style: none;
 }
 
-.navbar li a{
+.navbar li a {
     color: #000;
     text-decoration: none;
     line-height: 2rem;
+}
+
+.navbar li a:hover {
+    color: #003cff;
 }
 
 .logo {
@@ -89,6 +102,10 @@ header nav {
     line-height: 1.65rem;
 }
 
+.learn-btn:hover {
+    color: #003cff;
+}
+
 .container__art {
     padding: 0 5%;
     margin-top: 6.25rem;
@@ -105,3 +122,56 @@ header nav {
     font-weight: 400;
 }
 
+.art {
+    max-width: 100%;
+}
+
+.art__photo {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.art__list {
+    margin-top: 2.5rem;
+    list-style: none;
+}
+
+.art__title {
+    margin-top: 0.5rem;
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+}
+
+.art__list p {
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 1rem 0; 
+}
+
+.art__list a {
+    color: #000;
+    text-decoration: none;
+}
+
+.container__environments {
+    padding: 0 5%;
+    overflow: hidden;
+}
+
+.arne {
+    max-width: 100%;
+    width: 100%;
+    margin-top: 6.25rem;
+    padding-bottom: 2rem;
+}
+
+.read {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.05rem;
+}
+
+.environments {
+    margin: 0.5rem 0 1rem 0;
+}
