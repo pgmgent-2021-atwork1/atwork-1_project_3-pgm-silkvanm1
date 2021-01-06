@@ -66,9 +66,11 @@ header nav {
     padding-top: 3rem;
 }
 
-.logo a {
-    color:#000;
-    text-decoration: none;
+@media only screen and (min-width: 47.9rem){
+    .logo {
+        width: 7.35rem;
+        height: 4.2rem;
+    }
 }
 
 .container__lupine {
@@ -154,6 +156,12 @@ header nav {
     text-decoration: none;
 }
 
+@media only screen and (min-width: 47.9rem){
+    .art {
+        display: flex;
+    }
+}
+
 .container__environments {
     padding: 0 5%;
     overflow: hidden;
@@ -176,6 +184,23 @@ header nav {
     margin: 0.5rem 0 1rem 0;
 }
 
+@media only screen and (min-width: 47.9rem){
+    .container__environments {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+    }
+    .arne {
+        max-width: 100%;
+        width: 40%;
+    }
+    .environments__container{
+        max-width: 100%;
+        width: 40%;
+        margin-left: 6.25rem;
+    }
+}
+
 footer {
     margin-top: 6.25rem;
     padding-bottom: 3.75rem;
@@ -194,7 +219,7 @@ footer {
     justify-content: space-between;
 }
 
-.container__socials a {
+.socials {
     padding: 2rem;
     max-width: 100%;
     width: 50%;
@@ -202,12 +227,37 @@ footer {
     text-decoration: none;
 }
 
-.container__socials a:hover {
+.socials:hover {
     color: #003cff;
 }
 
-.container__socials a svg {
+.socials svg {
     width: 1.4rem;
+}
+
+.container__form {
+    padding: 0 5%;
+}
+
+.container__form h2 {
+    padding-top: 3.75rem;
+    font-size: 1.75rem;
+    font-weight: 300;
+    margin-bottom: 1.25rem;
+}
+
+form {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    align-items: center;
+    padding-right: 0.75rem;
+}
+
+form input {
+    background: none;
+    border: none;
+    padding: 0 0.5rem;
+    height: 2.8rem;
+    font-size: 1rem;
 }
 
 .container__instagram {
@@ -220,9 +270,15 @@ footer {
     justify-content: space-between;
 }
 
-.instagram__title a {
+.instagram__title a, .legal li a {
     text-decoration: none;
     color:#000;
+}
+
+.legal__list {
+    list-style: none;
+    display: flex;
+    max-width: 100%;
 }
 
 .instagram__title a:hover {
@@ -235,6 +291,20 @@ footer {
     margin: 3.75rem 0 0;
 }
 
-.legal p, .legal p a {
+.legal p, .legal li a {
     font-size: 0.75rem;
+}
+
+.legal a:hover {
+    color: #003cff;
+    text-decoration: #003cff;
+}
+
+.legal li::after {
+    font-size: 0.75rem;
+    content: '-';
+}
+
+.legal li:last-child::after {
+    content: '';
 }
