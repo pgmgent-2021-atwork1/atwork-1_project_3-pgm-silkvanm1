@@ -26,3 +26,14 @@ form {
     color: rgba(17,17,19,0.1);
     padding: 0 0.5rem;
 } */
+
+.instagram__feed a {
+    text-decoration: none;
+}
+
+.insta__photo {
+    max-width: 100%;
+    width: 13rem;
+    height: 13rem;
+    padding: 0.5rem;
+}

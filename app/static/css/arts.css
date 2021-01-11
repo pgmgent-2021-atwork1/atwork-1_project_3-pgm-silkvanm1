@@ -1,0 +1,61 @@
+.container__filters {
+    padding: 0 5%;
+}
+
+.filter-category {
+    max-width: 100%;
+    width: 100%;
+}
+
+.filter-category ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter-category ul li {
+    list-style: none;
+    font-size: 1.1rem;
+    padding-right: 1rem;
+} 
+
+.filter-year{
+    max-width: 100%;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.filter-year ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.filter-year ul li {
+    list-style: none;
+    font-size: 0.9rem;
+    padding-right: 1rem;
+}
+
+.filter-view {
+    margin-top: 0.5rem;
+    max-width: 100%;
+    width: 100%;
+}
+
+.filter-view ul {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.filter-view ul li {
+    list-style: none;
+    font-size: 0.9rem;
+    padding-right: 1rem;
+}
+
+.filter-view ul li:hover,
+.filter-year ul li:hover,
+.filter-category ul li:hover {
+    color: #003cff;
+    cursor: pointer;
+}
