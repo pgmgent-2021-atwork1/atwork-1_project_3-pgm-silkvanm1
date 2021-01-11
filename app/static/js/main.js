@@ -133,10 +133,12 @@ let artPageModule = (function () {
         $artPage.innerHTML = artPage.map(artBig => {
             return `
             <li>
-                <h2>${artBig.title}</h2>
-                <h3>${artBig.subtitle}</h3>
-                <h4>${artBig.tags} — ${artBig.location}</h4>
-                <img class="art__photo" src="../static/images/${artBig.images}">
+                <a href="in-dialogue-with-calatrava/index.html">
+                    <h2>${artBig.title}</h2>
+                    <h3>${artBig.subtitle}</h3>
+                    <h4>${artBig.tags} — ${artBig.location}</h4>
+                    <img class="art__photo" src="../static/images/${artBig.images}">
+                </a>
             </li>
             `
         }).join('');
