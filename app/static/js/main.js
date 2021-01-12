@@ -2,11 +2,17 @@ const ART_API = 'https://www.pgm.gent/data/arnequinze/art.json';
 
 let artModule = (function (){
     const $artList = document.querySelector('.art');
+    const $categories = document.querySelector('.filter-category')
+    const $containerYear = document.querySelector('.filter-year')
+    const $artPage = document.querySelector('.art-big');
 
     function printArt(art) {
+        if ( $artList !== null ){
         const artInfo = art.filter((art)=> {
             return art.highlight;
         })
+
+        console.log(artInfo)
         $artList.innerHTML = artInfo.map((artexhib) => {
             return `
             <li class="art__list">
@@ -19,13 +25,91 @@ let artModule = (function (){
             `
         })
         .join('');
-   
+        }
     }
 
-    async function fetchArt() {
-        await services.art.getArt()
+    function printYear(art) {
+        if ( $containerYear !== null ){
+
+        console.log(art)
+            const yearFilter = art.map(years => years.year);
+            const uniqueYears = [...new Set(yearFilter.flat())]
+            console.log(uniqueYears)
+    
+            $containerYear.innerHTML = uniqueYears.map((event)=>{
+            return `<li><a href = "#${event}">${event}</a></li>`
+        }).join('');
+        }
+    }
+
+    function printCategories(art) {
+        if ( $categories !== null ){
+
+        console.log(art)
+            const category = art.map(categorie => categorie.tags);
+            console.log(category)
+            const uniqueCategories = [...new Set(category.flat())]
+            console.log(uniqueCategories)
+    
+            $categories.innerHTML = uniqueCategories.map((event)=>{
+            return `
+            <li>${event}</li>
+        
+            `
+        }).join('');
+        }   
+        
+    }
+
+    function printArtPage (art) {
+        if ($artPage !== null) {
+        console.log(art)
+
+        const yearFilter = art.map(years => years.year);
+            const uniqueYears = [...new Set(yearFilter.flat())]
+            console.log(uniqueYears)
+        
+        $artPage.innerHTML = uniqueYears.map((year)=>{
+            const artYear = art.filter((event)=>{
+                return event.year.indexOf(year) > -1;
+            })
+            console.log(artYear)
+                
+            //hier mappen over images (done)
+
+            const pieces = artYear.map(artBig => {
+                const photos = artBig.images.map((event)=>{
+                return `<img class="art__photo" src="../static/images/${event}"/>`
+                }).join("");
+
+                    return `
+                    <li>
+                        <a href="in-dialogue-with-calatrava/index.html">
+                            <h2>${artBig.title}</h2>
+                            <h3>${artBig.subtitle}</h3>
+                            <h4>${artBig.tags} — ${artBig.location}</h4>
+                            ${photos}
+                        </a>
+                    </li>
+                    `
+            }).join('');
+
+            return `
+            <h3 id = "${year}"> ${year}</h3>
+            ${pieces}
+            `
+
+        }).join("")
+        }
+    }
+
+    function fetchArt() {
+        services.art.getArt()
         .then((art) => {
             printArt(art);
+            printCategories(art);
+            printYear(art);
+            printArtPage(art);
         })
         .catch((error) => console.error(error));
     }
@@ -33,7 +117,6 @@ let artModule = (function (){
     function initialize () {
         fetchArt();
     }
-
     return {
         initialize,
     }
@@ -41,7 +124,7 @@ let artModule = (function (){
 
 let studioModule = (function(){
     const $studioList = document.querySelector('.studio');
-    let studioProjects = [];
+        let studioProjects = [];
 
     async function fetchstudio () {
         try {
@@ -55,6 +138,7 @@ let studioModule = (function(){
     }
 
     function printStudio () {
+        if ($studioList !== null){
         
         $studioList.innerHTML = studioProjects.slice(0, 3).map(projects => {
             return `
@@ -67,93 +151,19 @@ let studioModule = (function(){
             </li>   
             `
         }).join('');
+        }
     }
 
     function initialize () {
         fetchstudio();
     }
-
-    return {
-        initialize
-    }
-})();
-
-/*let categoryModule = (function () {
-    // const categorie = events.map(event => event.categorie);
-    // const filteredCategories = [...new Set(category)];
-    // console.log(filteredCategories);
-    const $filterCategories = document.querySelector('.filter-category');
-    let categorieFilter= [];
-
-    async function fetchCategories () {
-        try {
-            const response = await fetch (ART_API);
-            categorieFilter = await response.json();
-
-            printCategories();
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    function printCategories () {
-
-        $filterCategories.innerHTML = categorieFilter.map(artBig => {
-            return `
-            <li>${artBig.tags}</li>
-            `
-        }).join('');
-    }
-    function initialize () {
-        fetchCategories();
-    }
-
-    return {
-        initialize
-    }
-})();
-*/
-
-let artPageModule = (function () {
-    const $artPage = document.querySelector('.art-big');
-    let artPage = [];
-
-    async function fetchArtPage () {
-        try {
-            const response = await fetch (ART_API);
-            artPage = await response.json ();
-
-            printArtPage ();
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    function printArtPage () {
-        $artPage.innerHTML = artPage.map(artBig => {
-            return `
-            <li>
-                <a href="in-dialogue-with-calatrava/index.html">
-                    <h2>${artBig.title}</h2>
-                    <h3>${artBig.subtitle}</h3>
-                    <h4>${artBig.tags} — ${artBig.location}</h4>
-                    <img class="art__photo" src="../static/images/${artBig.images}">
-                </a>
-            </li>
-            `
-        }).join('');
-    }
-    function initialize () {
-        fetchArtPage();
-    }
-
     return {
         initialize
     }
 
 })();
 
-let pressModule =(function (){
+let pressModule = (function (){
     const $pressList = document.querySelector('.container__press');
     let pressList = [];
 
@@ -169,6 +179,7 @@ let pressModule =(function (){
     }
 
     function printPress () {
+        if ($pressList ==! null){
         $pressList.innerHTML = pressList.map(projects => {
             return `
             <li class="press__list">
@@ -180,6 +191,7 @@ let pressModule =(function (){
             </li>
             `
         }).join('');
+        }
     }
     function initialize () {
         fetchPress();
@@ -194,11 +206,8 @@ let app = (function (){
     function initialize(){
         artModule.initialize();
         studioModule.initialize();
-        //categoryModule.initialize();
-        artPageModule.initialize();
         pressModule.initialize();
     }
-
     return {
         initialize,
     }
