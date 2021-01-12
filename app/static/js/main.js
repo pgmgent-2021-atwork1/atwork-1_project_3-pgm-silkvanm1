@@ -176,7 +176,7 @@ let pressModule =(function (){
                 <h3>${projects.subtitle}</h3>
                 <h2 class="art__title">${projects.title}</h2>
                 <p>${projects.detail}</p>
-                <a class="learn-btn" href="#">Learn more</a>
+                <a class="learn-btn" href="my-secret-garden-valencia/index.html">Learn more</a>
             </li>
             `
         }).join('');
