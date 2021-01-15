@@ -9,20 +9,27 @@
     line-height: 1.2;
 }
 
-h2 {
+ul {
+    list-style: none;
+}
+
+h1 {
     font-size: 2.1rem;
+}
+
+h2 {
+    font-size: 1.75rem;
 }
 
 h3 {
     color: #787878;
     font-size: 1.1rem;
-    line-height: 1.2;
 }
 
 p {
     font-size: 1.05rem;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 1.75;
 }
 
 header {
@@ -53,8 +60,21 @@ header nav {
     line-height: 2rem;
 }
 
+.navbar li a{
+    text-decoration: none;
+    color:#000;
+    line-height: 1.75rem;
+}
+
 .navbar li a:hover {
     color: #003cff;
+}
+
+@media (min-width: 50rem){
+    .navbar li a {
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+    }
 }
 
 .logo {
@@ -210,7 +230,8 @@ footer {
 }
 
 .container__socials {
-    padding: 0 25%;
+    padding: 0 5%;
+    padding-bottom: 2rem;
     background: #fff;
     max-width: 100%;
     width: 100%;
@@ -218,10 +239,16 @@ footer {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    text-align: center;
+}
+
+.container__socials p {
+    font-size: 0.9rem;
+    font-weight: 400;
 }
 
 .socials {
-    padding: 2rem;
+    padding: 1rem;
     max-width: 100%;
     width: 50%;
     color: #000;
@@ -276,6 +303,15 @@ form input {
     color:#000;
 }
 
+.instagram__feed {
+    margin-left: 1.25rem;
+}
+
+.insta__photo {
+    max-width: 100%;
+    width: 50%;
+}
+
 .legal__list {
     list-style: none;
     display: flex;
@@ -328,9 +364,4 @@ form input {
 .navbar li .active {
     color: #003cff;
     border-bottom: 3px solid #003cff;
-}
-
-.navbar li a{
-    text-decoration: none;
-    color:#000;
 }

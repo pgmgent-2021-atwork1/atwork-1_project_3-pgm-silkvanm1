@@ -1,0 +1,23 @@
+.container__studio {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5rem;
+}
+
+.art__list {
+    width: 30%;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.art__photo {
+    max-width: 100%;
+    width: 100%;
+}
+
+.discover-small,
+.discover-big {
+    padding: 0 5%;
+    padding-top: 3rem;
+    width: 70%;
+}

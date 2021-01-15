@@ -7,9 +7,26 @@
     border: none;
 }
 
+.container__bio h1 {
+    margin-bottom: 1rem;
+}
+
+.container__bio p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
 .bio__photo {
     max-width: 100%;
+    width: 100%;
     padding-right: 5%;
+    margin-bottom: 3.75rem;
+}
+
+.container__work img {
+    max-width: 100%;
+    width: 100%;
 }
 
 .video {
@@ -20,7 +37,14 @@
 figure img {
     max-width: 100%;
     width: 100%;
-    padding: 0 5%;
+    /* padding: 0 5%; */
+}
+
+figcaption {
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-align: right;
+    margin-bottom: 3.75rem;
 }
 
 .container__bio,
@@ -29,11 +53,76 @@ figure img {
     padding: 0 5%;
 }
 
+iframe {
+    margin-bottom: 3.75rem;
+}
+
+.container__work p{
+    font-size: 1.3rem;
+    margin-bottom: 3.75rem;
+}
+
+quote {
+    max-width: 100%;
+    width: 100%;
+    font-size: 2.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    text-align: center;
+}
+
 .centered {
+    padding: 0 5%;
     text-align: center;
     margin-bottom: 2rem;
 }
 
-quote {
-    font-size: 2.1rem;
+.centered p {
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.nature-photos {
+    margin-top: 3.75rem;
+}
+
+.nature-photos img {
+    margin-bottom: 1.25rem;
+}
+
+.container__diversity p {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+@media (min-width:50rem) {
+    .bio__photo {
+        vertical-align: center;
+    }
+    .container__work {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .container__work p {
+        width: 45%;
+        margin-left: 2rem;
+        margin: 10% 0 10% 2rem;
+    }
+    .container__work img {
+        max-width: 100%;
+        width: 45%;
+        margin: 10% 0;
+    }
+    .container__under-quote img {
+        max-width: 100%;
+        width: 40%;
+    }
+    .centered {
+        width: 50%;
+    }
+    .nature-photos {
+        
+    }
 }

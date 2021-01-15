@@ -15,13 +15,13 @@ let artModule = (function (){
         console.log(artInfo)
         $artList.innerHTML = artInfo.map((artexhib) => {
             return `
-            <li class="art__list">
-                <img class="art__photo" src="../app/static/images/${artexhib.cover}">
-                <h3>${artexhib.tags[0]} - ${artexhib.location}</h3>
-                <h2 class="art__title">${artexhib.title}</h2>
-                <p>${artexhib.description}</p>
-                <a class="learn-btn" href="#">Learn more</a>
-            </li>
+                <li class="art__list">
+                    <img class="art__photo" src="../app/static/images/${artexhib.cover}">
+                    <h3>${artexhib.tags[0]} - ${artexhib.location}</h3>
+                    <h2 class="art__title">${artexhib.title}</h2>
+                    <p>${artexhib.description}</p>
+                    <a class="learn-btn" href="#">Learn more</a>
+                </li>
             `
         })
         .join('');
@@ -31,16 +31,29 @@ let artModule = (function (){
     function printYear(art) {
         if ( $containerYear !== null ){
 
-        console.log(art)
             const yearFilter = art.map(years => years.year);
             const uniqueYears = [...new Set(yearFilter.flat())]
             console.log(uniqueYears)
     
             $containerYear.innerHTML = uniqueYears.map((event)=>{
-            return `<li><a href = "#${event}">${event}</a></li>`
+            return `
+            <ul class="year__list">
+                <li class="year__list-items">
+                    <a href = "#${event}">${event}</a>
+                </li>
+            </ul>`
         }).join('');
         }
     }
+
+    function urlModule (parameter) {
+        const url = window.location.search;
+        const params = new URLSearchParams(url);
+        const category = params.get(parameter);
+        console.log(category);
+        return category;
+    
+    };
 
     function printCategories(art) {
         if ( $categories !== null ){
@@ -53,7 +66,7 @@ let artModule = (function (){
     
             $categories.innerHTML = uniqueCategories.map((event)=>{
             return `
-            <li>${event}</li>
+            <li class="category__list-items">${event}</li>
         
             `
         }).join('');
@@ -67,7 +80,6 @@ let artModule = (function (){
 
         const yearFilter = art.map(years => years.year);
             const uniqueYears = [...new Set(yearFilter.flat())]
-            console.log(uniqueYears)
         
         $artPage.innerHTML = uniqueYears.map((year)=>{
             const artYear = art.filter((event)=>{
@@ -79,18 +91,24 @@ let artModule = (function (){
 
             const pieces = artYear.map(artBig => {
                 const photos = artBig.images.map((event)=>{
-                return `<img class="art__photo" src="../static/images/${event}"/>`
+                return `<li class="container__art__photo">
+                <img class="art__photo" src="../static/images/${event}"/>
+                </li>`
                 }).join("");
 
                     return `
-                    <li>
-                        <a href="in-dialogue-with-calatrava/index.html">
-                            <h2>${artBig.title}</h2>
-                            <h3>${artBig.subtitle}</h3>
-                            <h4>${artBig.tags} — ${artBig.location}</h4>
-                            ${photos}
-                        </a>
-                    </li>
+                        <ul class="art__list">
+                            <li>
+                                <a href="in-dialogue-with-calatrava/index.html">
+                                    <div class="titles">
+                                        <h2>${artBig.title}</h2>
+                                        <h3>${artBig.subtitle}</h3>
+                                        <h4>${artBig.tags} — ${artBig.location}</h4>
+                                    </div>
+                                    <ul class="photo__container">${photos}</ul>
+                                </a>
+                            </li>
+                        </ul>
                     `
             }).join('');
 
@@ -110,6 +128,7 @@ let artModule = (function (){
             printCategories(art);
             printYear(art);
             printArtPage(art);
+            urlModule(parameter);
         })
         .catch((error) => console.error(error));
     }
@@ -123,7 +142,7 @@ let artModule = (function (){
 })();
 
 let studioModule = (function(){
-    const $studioList = document.querySelector('.studio');
+    const $studioList = document.querySelector('.container__studio');
         let studioProjects = [];
 
     async function fetchstudio () {
@@ -140,10 +159,10 @@ let studioModule = (function(){
     function printStudio () {
         if ($studioList !== null){
         
-        $studioList.innerHTML = studioProjects.slice(0, 3).map(projects => {
+        $studioList.innerHTML = studioProjects.map(projects => {
             return `
             <li class="art__list">
-                <img class="art__photo" src="../app/static/images/${projects.thumbnail}">
+                <img class="art__photo" src="../static/images/${projects.thumbnail}">
                 <h3>${projects.subtitle}</h3>
                 <h2 class="art__title">${projects.title}</h2>
                 <p>${projects.description}</p>
@@ -164,35 +183,56 @@ let studioModule = (function(){
 })();
 
 let pressModule = (function (){
-    const $pressList = document.querySelector('.container__press');
-    let pressList = [];
 
     async function fetchPress () {
         try {
             const response = await fetch ('../data/press.json');
-            pressList = await response.json();
+            data = await response.json();
 
-            printPress();
+            printRelease(data)
+            printPress(data);
         } catch (error) {
             console.log(error)
         }
     }
 
-    function printPress () {
-        if ($pressList ==! null){
-        $pressList.innerHTML = pressList.map(projects => {
+    function printRelease (data) {
+        this.$releaseList = document.querySelector('.release__list');
+        if (this.$releaseList !== null) {
+            this.$releaseList.innerHTML = data.slice(0, 3).map(projects => {
+                return `
+                <li class="release__list-items">
+                    <img class="art__photo" src="../static/images/${projects.image}">
+                    <h3>${projects.subtitle}</h3>
+                    <h2 class="art__title">${projects.title}</h2>
+                    <p>${projects.detail}</p>
+                    <a class="learn-btn" href="my-secret-garden-valencia/index.html">Open press release</a>
+                </li>
+                `
+            }).join('');
+        }
+    }
+
+    function printPress (data) {
+        this.$pressList = document.querySelector('.press__list');
+        console.log(data)
+        if ($pressList !== null){
+        this.$pressList.innerHTML = data.slice(3, 6).map(projects => {
             return `
-            <li class="press__list">
+            <li class="press__list-items">
                 <img class="art__photo" src="../static/images/${projects.image}">
                 <h3>${projects.subtitle}</h3>
                 <h2 class="art__title">${projects.title}</h2>
                 <p>${projects.detail}</p>
-                <a class="learn-btn" href="my-secret-garden-valencia/index.html">Learn more</a>
+                <a class="learn-btn" href="my-secret-garden-valencia/index.html">download article</a>
             </li>
             `
         }).join('');
         }
     }
+
+
+
     function initialize () {
         fetchPress();
     }

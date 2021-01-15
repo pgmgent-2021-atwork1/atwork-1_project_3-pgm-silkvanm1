@@ -1,0 +1,28 @@
+.container__releases,
+.container__press {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5%;
+}
+
+.press__list,
+.release__list {
+    display: flex;
+}
+
+.press__list-items,
+.release__list-items {
+    max-width: 100%;
+    list-style: none;
+    padding: 2rem;
+}
+
+.art__photo {
+    max-width: 100%;
+}
+
+.container__releases a,
+.container__press a {
+    text-decoration: none;
+    color: black;
+}

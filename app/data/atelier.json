@@ -3,71 +3,41 @@
         "title": "Arne Quinze about the series of sculptures in The Hague",
         "subtitle": "Interview",
         "thumbnail": ["c33a9240ef6f0e78c8ec07ff643945c3.jpg"],
-        "description": "For an artist, public space is an ideal place in which to experiment. There exists a tension...",
-        "images": [
-            "sella1.jpg",
-            "sella2.jpg",
-            "sella3.jpg"
-        ]
+        "description": "For an artist, public space is an ideal place in which to experiment. There exists a tension..."
     },
 
     {
         "title": "Arte Sella Museum installation",
         "subtitle": "Building an installation in Italy",
         "thumbnail": ["62a15f88ee37ead1009765c776c8587e.jpg"],
-        "description": null,
-        "images": [
-            "sella1.jpg",
-            "sella2.jpg",
-            "sella3.jpg"
-        ]
+        "description": ""
     },
 
     {
         "title": "Cityview inspiration",
         "subtitle": "Sao Paulo, Brazil",
         "thumbnail": ["37adabe06ad80f0c981f1842950ed4b9.jpg"],
-        "description": null,
-        "images": [
-            "sella1.jpg",
-            "sella2.jpg",
-            "sella3.jpg"
-        ]
+        "description": ""
     },
 
     {
         "title": "Construction at Mamac Museum",
         "subtitle": "Work in progress",
         "thumbnail": ["52ab08772f95cfd139687c84fab8f2f9.jpg"],
-        "description": null,
-        "images": [
-            "sella1.jpg",
-            "sella2.jpg",
-            "sella3.jpg"
-        ]
+        "description": ""
     },
 
     {
         "title": "Working for SOS Kinderdorpen",
         "subtitle": "My dream house, Social art",
         "thumbnail": ["f7e1cc3e40fafd8221bf23e43cceec0e.jpg"],
-        "description": null,
-        "images": [
-            "sella1.jpg",
-            "sella2.jpg",
-            "sella3.jpg"
-        ]
+        "description": ""
     },
 
     {
         "title": "Camille inauguration party",
         "subtitle": "Inauguration of the installation, Rouen, France",
         "thumbnail": ["4441c623b4ef49eb0f5bc33b444f1d26.jpg"],
-        "description": null,
-        "images": [
-            "sella1.jpg",
-            "sella2.jpg",
-            "sella3.jpg"
-        ]
+        "description": ""
     }
 ]
