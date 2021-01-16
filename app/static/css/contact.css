@@ -11,21 +11,20 @@ form {
     display: flex;
     flex-direction: column;
     width: 100%;
-    font-size: 1rem;
-    height: 2.8rem;
+    /* height: 2.8rem; */
     border: 1px solid rgba(17,17,19,0.1);
     color: rgba(17,17,19,0.1);
     padding: 0 0.5rem;
 }
 
-/* .form-item {
-    width: 100%;
-    font-size: 1rem;
-    height: 2.8rem;
-    border: 1px solid rgba(17,17,19,0.1);
-    color: rgba(17,17,19,0.1);
-    padding: 0 0.5rem;
-} */
+.send-btn {
+    background: #003cff;
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    margin-top: 1rem;
+}
 
 .instagram__feed a {
     text-decoration: none;
