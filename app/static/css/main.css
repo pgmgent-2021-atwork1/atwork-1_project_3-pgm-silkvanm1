@@ -205,7 +205,7 @@ header nav {
     margin: 0.5rem 0 1rem 0;
 }
 
-@media only screen and (min-width: 47.9rem){
+@media only screen and (min-width: 50rem){
     .container__environments {
         display: flex;
         flex-wrap: wrap;
@@ -238,7 +238,6 @@ footer {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
     text-align: center;
 }
 
@@ -253,6 +252,13 @@ footer {
     width: 50%;
     color: #000;
     text-decoration: none;
+}
+
+@media (min-width: 50rem) {
+    .container__socials {
+        display: flex;
+        flex-wrap: nowrap;
+    }
 }
 
 .socials:hover {
@@ -304,7 +310,15 @@ form input {
 }
 
 .instagram__feed {
+    margin-top: 2rem;
     margin-left: 1.25rem;
+}
+
+@media (min-width: 50rem) {
+    .instagram__feed {
+        display: flex;
+        flex-wrap: nowrap;
+    }
 }
 
 .insta__photo {

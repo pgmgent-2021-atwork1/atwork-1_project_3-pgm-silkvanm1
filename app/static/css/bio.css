@@ -11,7 +11,7 @@
     margin-bottom: 1rem;
 }
 
-.container__bio p {
+.bio {
     font-size: 1.3rem;
     font-weight: 300;
     margin-bottom: 1rem;
@@ -27,11 +27,14 @@
 .container__work img {
     max-width: 100%;
     width: 100%;
+    margin-bottom: 2rem;
 }
 
-.video {
+iframe {
     max-width: 100%;
     padding: 0 5%;
+    margin-bottom: 3.75rem;
+    margin-top: 3.75rem;
 }
 
 figure img {
@@ -53,12 +56,14 @@ figcaption {
     padding: 0 5%;
 }
 
-iframe {
+.container__work p{
+    font-size: 1.3rem;
     margin-bottom: 3.75rem;
 }
 
-.container__work p{
-    font-size: 1.3rem;
+.container__quote {
+    padding: 0 5%;
+    text-align: center;
     margin-bottom: 3.75rem;
 }
 
@@ -68,7 +73,15 @@ quote {
     font-size: 2.1rem;
     margin-bottom: 1.5rem;
     font-weight: 300;
-    text-align: center;
+}
+
+.container__quote p {
+    margin-top: 3rem;
+    font-size: 1.75rem;
+}
+
+.container__under-quote {
+    padding: 0 5%;
 }
 
 .centered {
@@ -98,6 +111,9 @@ quote {
 }
 
 @media (min-width:50rem) {
+    .bio {
+        width: 65%;
+    }
     .bio__photo {
         vertical-align: center;
     }
@@ -115,14 +131,48 @@ quote {
         width: 45%;
         margin: 10% 0;
     }
-    .container__under-quote img {
+    .container__under-quote img{
         max-width: 100%;
-        width: 40%;
+        width: 60%;
     }
     .centered {
-        width: 50%;
+        margin: 7.5rem;
+        width: 70%;
+    }
+    .finished-art {
+        margin: 7.5rem;
     }
     .nature-photos {
-        
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .nature-photos img {
+        width: 40%;
+        margin-right: 2rem;
+    }
+    .container__diversity {
+        display: flex;
+        align-items: center;
+    }
+    .diversity-container {
+        width: 50%;
+        align-content: center;
+    }
+    .diversity-container img {
+        max-width: 100%;
+    }
+    .right {
+        width: 60%;
+        margin-left: 5rem;
+    }
+    .diversity-photos {
+        display: flex;
+        margin-bottom: 7.25rem;
+        padding: 0 5%;
+    }
+    .diversity-photos img {
+        max-width: 100%;
+        width: 30%;
+        padding: 3rem;
     }
 }

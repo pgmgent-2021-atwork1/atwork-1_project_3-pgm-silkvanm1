@@ -49,11 +49,18 @@ let artModule = (function (){
     function urlModule (parameter) {
         const url = window.location.search;
         const params = new URLSearchParams(url);
-        const category = params.get(parameter);
+        const category = params.get("category");
         console.log(category);
-        return category;
-    
-    };
+        
+        if (category) {
+            const filter = parameter.filter((event) =>{
+                return event.tags.indexOf(category) > -1
+            })
+            printCategories(filter)
+        } else {
+            printCategories(art)
+        }
+    }
 
     function printCategories(art) {
         if ( $categories !== null ){
@@ -128,7 +135,7 @@ let artModule = (function (){
             printCategories(art);
             printYear(art);
             printArtPage(art);
-            urlModule(parameter);
+            urlModule(art);
         })
         .catch((error) => console.error(error));
     }
@@ -166,7 +173,7 @@ let studioModule = (function(){
                 <h3>${projects.subtitle}</h3>
                 <h2 class="art__title">${projects.title}</h2>
                 <p>${projects.description}</p>
-                <a class="learn-btn" href="#">Learn more</a>
+                <a class="learn-btn" href="visiting-mons-again/index.html">Learn more</a>
             </li>   
             `
         }).join('');
