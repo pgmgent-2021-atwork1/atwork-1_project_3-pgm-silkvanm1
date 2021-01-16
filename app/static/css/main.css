@@ -100,9 +100,11 @@ header nav {
 }
 
 .lupine__photo {
-    margin: 0;
     max-width: 100%;
+    width: calc(100%+10vw);
     margin-bottom: 3rem;
+    vertical-align: middle;
+    padding-left: 5rem;
 }
 
 .lupine__title {
@@ -132,6 +134,7 @@ header nav {
 .container__art {
     padding: 0 5%;
     margin-top: 6.25rem;
+    margin-bottom: 13.75rem;
 }
 
 .title__article {
@@ -158,6 +161,7 @@ header nav {
 .art__list {
     margin-top: 2.5rem;
     list-style: none;
+    margin-right: 5rem;
 }
 
 .art__title {
@@ -180,6 +184,10 @@ header nav {
 @media only screen and (min-width: 47.9rem){
     .art {
         display: flex;
+        justify-content: center;
+    }
+    .art__list {
+        width: 25%;
     }
 }
 
@@ -205,20 +213,43 @@ header nav {
     margin: 0.5rem 0 1rem 0;
 }
 
-@media only screen and (min-width: 50rem){
+@media (min-width: 50rem){
     .container__environments {
         display: flex;
         flex-wrap: wrap;
         overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    .container__arne{
+        width: 50%;
     }
     .arne {
         max-width: 100%;
-        width: 40%;
+        height: auto;
     }
     .environments__container{
         max-width: 100%;
-        width: 40%;
-        margin-left: 6.25rem;
+        width: 25%;
+        margin-left: 5rem;
+    }
+    .read {
+        font-weight: 400;
+    }
+}
+
+@media (min-width: 60rem){
+    .environments__container h2 {
+        font-size: 2.6rem;
+    }
+    .environments {
+        font-size: 1.75rem;
+    }
+    .environments__container {
+        margin-top: 10rem;
+    }
+    .read {
+        font-size: 1.75rem;
     }
 }
 
@@ -291,6 +322,7 @@ form input {
     border: none;
     padding: 0 0.5rem;
     height: 2.8rem;
+    width: 100%;
     font-size: 1rem;
 }
 
