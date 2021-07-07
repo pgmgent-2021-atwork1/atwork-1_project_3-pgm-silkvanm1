@@ -1,0 +1,241 @@
+.container__filters {
+    padding: 0 5%;
+}
+
+.container__category {
+    margin-bottom: 2rem;
+    display: flex;
+
+}
+
+.container__category p a {
+    color: black;
+    font-size: 1.1rem;
+}
+
+.container__category p {
+    width: 7rem;
+}
+
+.filter-category {
+    display: flex;
+    max-width: 100%;
+    width: 100%;
+}
+
+.filter-category ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.category__list-items {
+    list-style: none;
+    font-size: 1.1rem;
+    padding-right: 1rem;
+} 
+
+.container__year {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.container__year p {
+    width: 7rem;
+}
+
+.container__year p a {
+    color: black;
+    font-size: 0.9rem;
+}
+
+.filter-year{
+    max-width: 100%;
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.year__list-items {
+    list-style: none;
+}
+
+.year__list-items a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding-right: 1rem;
+    color: black;
+}
+
+.filter-view {
+    margin-top: 0.5rem;
+    max-width: 100%;
+    width: 100%;
+}
+
+.filter-view ul {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.filter-view ul li {
+    list-style: none;
+    font-size: 0.9rem;
+    padding-right: 1rem;
+}
+
+.filter-view ul li:hover,
+.filter-year ul li:hover,
+.filter-category ul li:hover {
+    color: #003cff;
+    cursor: pointer;
+}
+
+.filter-view {
+    text-align: right;
+}
+
+.art-big {
+    margin-top: 5rem;
+    padding: 0 5%;
+}
+
+.art__list {
+    text-decoration: none;
+}
+
+.art__list li a {
+    display: flex;
+}
+
+.container__art__list li a {
+    color: black;
+    text-decoration: none;
+}
+
+.art__photo {
+    width: 7rem;
+    margin: 2rem;
+}
+
+.photo__container {
+    display: flex;
+    overflow-x: auto;
+    width: 60%;
+    margin-left: 5rem;
+}
+
+.titles {
+    width: 30%;
+    text-align: right;
+}
+
+iframe {
+    max-width: 100%;
+    width: 100%;
+    padding-right: 5%;
+}
+
+.main-text {
+    padding: 0 5%;
+    margin-top: 3rem;
+}
+
+.main-text h2{
+    color: #787878;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.main-text h1 {
+    margin-bottom: 1rem;
+}
+
+.main-text p {
+    font-size: 1.3rem;
+}
+
+.small {
+    padding: 0 5%;
+    margin-top: 1rem;
+    margin-bottom: 7.5rem;
+}
+
+.small p,
+.small a{
+    font-weight: 400;
+    font-size: 0.8rem;
+    color:black;
+}
+
+.container__small-photo {
+    padding: 0 5%;
+}
+
+.image-small {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 6.25rem;
+}
+
+.container__related {
+    padding: 0 5%;
+}
+
+.related__title {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.container__related img {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.container__related article {
+    margin-bottom: 3.75rem;
+}
+
+.learn-btn {
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+@media (min-width: 50rem) {
+    .container__calatrava {
+        display: flex;
+    }
+    .main-text {
+        width: 70%;
+    }
+    .small {
+        width: 30%;
+        text-align: right;
+        margin-top: 10rem;
+    }
+    .container__small-photo {
+        margin: 7.5rem 0 13.75rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .image-small {
+        width: 20%;
+        margin: 2rem;
+    }
+    .container__related {
+        display: flex;
+        justify-content: space-around;
+    }
+    .container__related article {
+        width: 20%;
+    }
+    .chroma,
+    .alicante {
+        margin-right: 3rem;
+    }
+}

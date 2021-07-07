@@ -1,0 +1,188 @@
+#active {
+    color: #003cff;
+    border-bottom: 3px solid #003cff;
+}
+
+#active:hover {
+    border: none;
+}
+
+.container__bio h1 {
+    margin-bottom: 1rem;
+}
+
+.bio {
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.bio__photo {
+    max-width: 100%;
+    width: 100%;
+    padding-right: 5%;
+    margin-bottom: 3.75rem;
+}
+
+.container__work img {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+iframe {
+    max-width: 100%;
+    padding: 0 5%;
+    margin-bottom: 3.75rem;
+    margin-top: 3.75rem;
+}
+
+figure img {
+    max-width: 100%;
+    width: 100%;
+    /* padding: 0 5%; */
+}
+
+figcaption {
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-align: right;
+    margin-bottom: 3.75rem;
+}
+
+.container__bio,
+.container__work,
+.container__diversity {
+    padding: 0 5%;
+}
+
+.container__work p{
+    font-size: 1.3rem;
+    margin-bottom: 3.75rem;
+}
+
+.container__quote {
+    padding: 0 5%;
+    text-align: center;
+    margin-bottom: 3.75rem;
+    max-width: 100%;
+    width: 70%;
+    margin: 0 auto;
+}
+
+quote {
+    font-size: 2.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.container__quote p {
+    margin-top: 3rem;
+    margin-bottom: 7.5rem;
+    font-size: 1.75rem;
+}
+
+.container__under-quote {
+    padding: 0 5%;
+}
+
+.centered {
+    padding: 0 5%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.centered p {
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.nature-photos {
+    margin-top: 3.75rem;
+}
+
+.nature-photos img {
+    margin-bottom: 1.25rem;
+}
+
+.container__diversity p {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+@media (min-width:50rem) {
+    .bio {
+        width: 65%;
+    }
+    .bio__photo {
+        vertical-align: center;
+    }
+    .container__work {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .container__work p {
+        width: 45%;
+        margin-left: 2rem;
+        margin: 10% 0 10% 2rem;
+    }
+    .container__work img {
+        max-width: 100%;
+        width: 45%;
+        margin: 10% 0;
+    }
+    .container__under-quote img{
+        max-width: 100%;
+        width: 60%;
+    }
+    .centered {
+        margin: 7.5rem;
+        width: 50%;
+        margin: 0 auto;
+    }
+    .finished-art {
+       max-width: 50%;
+       margin: 0 auto;
+    }
+    .finished-art img {
+        width: 100%;
+    }
+    figcaption {
+        margin-bottom: 7.5rem;
+    }
+    .nature-photos {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .nature-photos img {
+        width: 40%;
+        margin-right: 2rem;
+    }
+    .container__diversity {
+        display: flex;
+        align-items: center;
+    }
+    .diversity-container {
+        width: 50%;
+        align-content: center;
+    }
+    .diversity-container img {
+        max-width: 100%;
+    }
+    .right {
+        width: 60%;
+        margin-left: 5rem;
+    }
+    .diversity-photos {
+        display: flex;
+        margin-bottom: 7.25rem;
+        padding: 0 5%;
+    }
+    .diversity-photos img {
+        max-width: 100%;
+        width: 30%;
+        padding: 3rem;
+    }
+}
